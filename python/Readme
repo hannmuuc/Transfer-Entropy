@@ -1,0 +1,36 @@
+prework.py
+对原始数据进行预处理
+
+Entropy_dll.py
+调用C++的接口类
+主要实现了TE RTE TSE RTSE的熵的计算 其中有TE的多线程实现
+可以调用实现的C++的dll库
+
+characteristics_interface.py
+用Entropy_dll.py的类方法为预处理之后的H5文件进行特征提取
+实现了TE RTE TSE RTSE的连通性特征的提取和矩阵的制作
+并封装了调用Entropy_dll.py的参数
+带有少量的展示
+
+characteristics.py
+为characteristics_interface.py作出的一个整理
+由于特征提取方法较多 单独列出方便使用
+
+classification_*.py
+实现了4种特征提取之后的机器学习方法
+带有多种尝试以获取更好的分类效果
+由于代码复杂性原因 已删除尝试使用的决策树等方法
+使用了随机森林
+
+cross_check.py
+使用了K-交叉检验进行机器学习
+由于Alp=1.0时效果最好所有实现了TSE和TE的交叉检验
+
+Hypothesis_Testing.py
+进行了假设检验 并且由P值生成显著性矩阵
+
+drawing.py
+调用cross_check.py和Hypothesis_Testing.py
+以及前面进行特征提取和机器学习的结果进行绘图
+
+
